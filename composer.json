@@ -4,7 +4,12 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-		"laravel/framework": "4.2.*"
+		"laravel/framework": "4.2.*",
+		"bkwld/croppa": "3.4.3"
+	},
+	"require-dev": {
+ 	   "way/generators": "~2.0",
+ 	   "fzaninotto/faker": "1.4.0"
 	},
 	"autoload": {
 		"classmap": [
