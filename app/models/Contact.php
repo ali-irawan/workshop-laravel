@@ -1,7 +1,7 @@
 <?php
 
 class Contact extends \Eloquent {
-	protected static $rules = [
+	public static $rules = [
 		"name" => "required",
 		"email" => "required|email",
 		"phone" => "required",
