@@ -16,5 +16,10 @@ Route::get('/', function()
 	return View::make('index');
 });
 
-
-Route::controller('contact','ContactController');
+/*
+   contact 			GET   	ContactController@index
+   contact  		POST 	ContactController@store
+   contact/{id}		PUT 	ContactController@update
+   contact/{id}		DELETE  ContactController@destroy
+*/
+Route::resource('api/contact','ContactController');
