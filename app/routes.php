@@ -26,3 +26,6 @@ Route::resource('api/contact','ContactController');
 
 Route::get('/gallery', 'GalleryController@index');
 Route::post('/gallery', 'GalleryController@upload');
+
+
+Route::get('/login', 'LoginController@index');
