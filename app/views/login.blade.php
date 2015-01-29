@@ -19,6 +19,12 @@
 				    <span class="required"></span>
 					<input class="form-control" placeholder="Password" required="required" name="password" type="password" value="">
 				    <span class="required"></span>
+
+				    @if(Session::has('errors'))
+				    	<div class="alert alert-danger">
+				    		{{ Session::get('errors') }}
+				    	</div>
+				    @endif
 				    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 				</form>
             </div>

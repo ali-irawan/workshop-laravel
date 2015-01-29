@@ -11,21 +11,34 @@
 |
 */
 
-Route::get('/', function()
+
+Route::group(array('before' => 'auth'), function()
 {
-	return View::make('index');
+
+		Route::get('/', function()
+		{
+			return View::make('index');
+		});
+
+		/*
+		   contact 			GET   	ContactController@index
+		   contact  		POST 	ContactController@store
+		   contact/{id}		PUT 	ContactController@update
+		   contact/{id}		DELETE  ContactController@destroy
+		*/
+		Route::resource('api/contact','ContactController');
+
+		Route::get('/gallery', 'GalleryController@index');
+		Route::post('/gallery', 'GalleryController@upload');
+    
 });
-
-/*
-   contact 			GET   	ContactController@index
-   contact  		POST 	ContactController@store
-   contact/{id}		PUT 	ContactController@update
-   contact/{id}		DELETE  ContactController@destroy
-*/
-Route::resource('api/contact','ContactController');
-
-Route::get('/gallery', 'GalleryController@index');
-Route::post('/gallery', 'GalleryController@upload');
 
 
 Route::get('/login', 'LoginController@index');
+Route::post('/login', 'LoginController@login');
+
+Route::get('/logout', function(){
+	
+	Auth::logout();
+	return Redirect::to('/');
+});	

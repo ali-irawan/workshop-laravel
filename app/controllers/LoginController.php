@@ -16,7 +16,14 @@ class LoginController extends BaseController {
 		$password = Input::get('password');
 
 		// Check email and password if correct or not
+		if(Auth::attempt([ 'email' => $email,  
+			               'password' => $password ])){
 
-		
+			return Redirect::to('/');
+		} else {
+			Session::flash('errors','Unable to login');
+			return Redirect::to('/login');
+		}
+
 	}
 }
