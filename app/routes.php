@@ -30,6 +30,11 @@ Route::group(array('before' => 'auth'), function()
 
 		Route::get('/gallery', 'GalleryController@index');
 		Route::post('/gallery', 'GalleryController@upload');
+
+		Route::get('/chart', function(){
+
+			return View::make("chart");
+		});
     
 });
 
