@@ -23,3 +23,6 @@ Route::get('/', function()
    contact/{id}		DELETE  ContactController@destroy
 */
 Route::resource('api/contact','ContactController');
+
+Route::get('/gallery', 'GalleryController@index');
+Route::post('/gallery', 'GalleryController@upload');

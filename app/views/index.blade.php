@@ -1,8 +1,16 @@
 @extends("templates/master")
 @section("head")
 	<script src="/js/index.js"></script>
+	<script>
+	$(document).ready(function(){
+		$('#lnkcontact').addClass('active');
+	});
+	</script>
 @stop
 @section("content")
+	
+	@include("includes/menu")
+
 	<div ng-app="myApp">
 		<div ng-controller="ContactCtrl">
 			<h2>Contacts</h2>
