@@ -1,12 +1,10 @@
 @extends("templates/master")
 @section("head")
-	<script src="/js/gallery.js"></script>
 	<script>
 	$(document).ready(function(){
 		$('#lnkgallery').addClass('active');
 	});
 	</script>
-
 @stop
 @section("content")
 	@include("includes/menu")
@@ -30,7 +28,7 @@
 	<div id="show" style="padding-top: 50px">
 	@foreach($files as $key => $value)
 
-		<img src="{{ Croppa::url($value->filename, 200, null) }}" />
+		<img src="{{ Croppa::url($value->filename, 200, null) }}"  />
 
 	@endforeach
 	</div>
