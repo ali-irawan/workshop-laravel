@@ -3,7 +3,7 @@
 class ContactController extends BaseController {
 	
 	public function index(){
-		$list = Contact::orderBy('name','asc')->get();
+		$list = Contact::orderBy('updated_at','desc')->get();
 		return Response::json([
 			"list" => $list
 		]);

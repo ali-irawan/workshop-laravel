@@ -28,7 +28,7 @@ app.controller("ContactCtrl", ['$scope','$http','$modal', function($scope, $http
 		    });
 
 		    modalInstance.result.then(function (userinput) {
-		      	$scope.list.push(userinput);
+		      	$scope.list.unshift(userinput);
 		      	$scope.info = [ "Data has been successfully added"];
 
 		    }, function () {
