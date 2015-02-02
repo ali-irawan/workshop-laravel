@@ -38,7 +38,9 @@ Route::group(array('before' => 'auth'), function()
     
 });
 
-
+Route::get('/tree', function(){
+   return View::make("tree");
+});
 Route::get('/login', 'LoginController@index');
 Route::post('/login', 'LoginController@login');
 

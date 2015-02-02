@@ -27,9 +27,7 @@
 
 	<div id="show" style="padding-top: 50px">
 	@foreach($files as $key => $value)
-
-		<img src="{{ Croppa::url($value->filename, 200, null) }}"  />
-
+		<img src="{{ Croppa::url($value->filename, 50, null) }}"  />
 	@endforeach
 	</div>
 @stop
